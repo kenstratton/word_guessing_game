@@ -1,0 +1,73 @@
+html { font-family: sans-serif; color: #454545;}
+body {
+  height: 100vh;
+  margin: 0 auto;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: #454545;
+}
+button {
+  border: none;
+  background: none;
+}
+
+
+.play_link {
+  font-size: 75px;
+  font-family: "Helvetica Neue";
+  font-weight: lighter;
+  display: block;
+  margin: 0 auto;
+}
+.play_link:hover {
+  border-bottom: 1px solid #454545;
+}
+
+
+.content {
+  height: 100%;
+  display: flex;
+}
+
+
+.menu {
+  position: relative;
+}
+.menu > a {
+  font-size: 50px;
+  position: absolute;
+  left: 40px;
+}
+.menu > #home {
+  top: 30px;
+  display: none;
+}
+.menu > #help {
+  bottom: 30px;
+}
+
+
+.main {
+  width: 100%;
+  position: relative;
+}
+.main > h1 {
+  font-size: 100px;
+  font-family: "HelveticaNeue-CondensedBold";
+  text-align: center;
+  margin: 150px 0 170px 20px;
+}
+.main > #ufo {
+  transform: rotate(-27deg);
+  position: absolute;
+  top: -20px;
+  left: 15px;
+}
+.main > #businessman {
+  position: absolute;
+  right: 11px;
+  bottom: 25px;
+}
