@@ -6,15 +6,7 @@ This is the python project for CS161 in the winter-term, 2021.
 
 Simple while loop to get input from the user and print it to the screen
 
-Check it for certain values
-
-Attempt to find a requested letter in a string
-
 Keep track of how many times a user has attempted something
-
-Try to find what letters are not in a string, and likely many other helpful skills to practice!
-
-It does not have to be perfect, but we should aim to improve ourselves during each project smile! Submit your files here in a zip file or submit a link to your GitHub repo as a reminder to me on where to find your files.
 
 ## Design
 Downloadable in PDF format from the following link:
