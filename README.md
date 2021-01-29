@@ -2,7 +2,12 @@
 This is the python project for CS161 in the winter-term, 2021.
 
 ## Tools and Techniques
-・Python 
+Language:  Python
+Framework: Flask
+Database:  SQLite
+ORM:       SQLAlchemy
+WebServer: Waitress
+
 
 Simple while loop to get input from the user and print it to the screen
 
