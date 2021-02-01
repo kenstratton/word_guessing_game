@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from datetime import datetime
-from word_guessing_game import db
+from main import db
 
 class Category(db.Model):
     __tablename__ = "category"
