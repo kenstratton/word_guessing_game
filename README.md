@@ -1,5 +1,7 @@
 # Word Guessing Game
 This is the python project for CS161 in the winter-term, 2021.
+Accessable from the following link:
+https://guess-ufo.herokuapp.com/
 
 ## Tools and Techniques
 Language:  Python
