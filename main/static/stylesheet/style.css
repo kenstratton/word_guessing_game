@@ -1,20 +1,32 @@
 * { box-sizing: border-box; }
-html { font-family: sans-serif; font-weight: lighter; color: #454545;}
-body { 
+html { font-family: "Helvetica Neue"; font-weight: lighter; color: #454545; }
+body {
   height: 100vh;
   min-height: 350px;
   min-width: 1000px;
   margin: auto;
   display: flex; }
-a { color: #454545; text-decoration: none; }
+h1 {
+  font-family: "HelveticaNeue-CondensedBold"; 
+  text-align: center;}
+a{ color: #454545; text-decoration: none; }
 button { border: none; background: none; }
-ul { padding: 0; margin: 0; display: flex; flex-wrap: wrap; list-style: none; }
+ul {
+  padding: 0;
+  margin: 0;
+  display: flex; flex-wrap: wrap;
+  list-style: none; }
 table { border-collapse: collapse; }
 
 
+/* Components give particular effects */
+.not-allowed { pointer-events: none; opacity: 45%; }
 .flex-wrapper { display: flex;}
+
+
+/* Links transfer to game */
 .play-link {
-  font: 75px "Helvetica Neue" ;
+  font: 75px "Helvetica Neue";
   font-weight: lighter;
   margin: auto;
   outline: none;
@@ -27,23 +39,54 @@ table { border-collapse: collapse; }
   background: #454545;
   content: '';
   position: absolute; left: 50%; bottom: 0;
-  transition: .5s all; }
+  transition: .4s all; }
 .play-link:hover::after { width: 100%; left: 0; }
 
 
+/* Side menu for home and help */
 .menu { position: relative; }
-.menu > a {
+.menu > * {
   font-size: 50px;
   position: absolute;
   z-index: 10; }
 .menu > #home { top: 35px; left: 70px;}
-.menu > #help { bottom: 35px; left: 80px;}
+.menu > #help { 
+  bottom: 35px; left: 80px;
+  cursor: pointer; }
+#help > .popup-txt {
+  width: 500px;
+  font-size: 18px;
+  font-weight: 200;
+  padding: 10px 18px;
+  border: solid .5px #454545;
+  border-radius: 8px;
+  background: #fff;
+  position: fixed;
+  bottom: 100px; left: 150px;
+  visibility: hidden; }
+.popup-txt:before {  
+  content: "";
+  width: 13px;
+  height: 12px;
+  border: solid .5px #454545;
+  border-radius: 50%;
+  position: absolute;
+  left: -46px; bottom: -10px; }
+.popup-txt:after {
+  content: "";
+  width: 20px;
+  height: 18px;
+  border: solid .5px #454545;
+  border-radius: 50%;
+  position: absolute;
+  left: -28px; bottom: 3px; }
+#help > .show { visibility: visible; }
 
 
+/* Top page contains the title and link to game */
 .top { width: 100%; position: relative; }
 .top > h1 {
-  font: 100px "HelveticaNeue-CondensedBold";
-  text-align: center;
+  font-size: 100px;
   margin: 150px 0 170px 20px; }
 #top-ufo {
   transform: rotate(-27deg);
@@ -52,27 +95,57 @@ table { border-collapse: collapse; }
   position: absolute; bottom: 25px; right: 11px; }
 
 
-.game { 
-  width: 100%; 
-  padding: 45px 0 0 170px; 
+/* Game page */
+.game {
+  width: 100%;
+  padding: 45px 0 0 170px;
   text-align: center; }
-.game .secret { width: fit-content; margin-left: 15%; }
-.secret .hint-txt { font-size: 40px; font-weight: lighter;}
-.secret .slot-lis { width: fit-content; margin: 15px auto 0; }
-.slot-lis > li {
-  width: 42px;
-  padding-bottom: 4px;
-  border-bottom: solid 1px #454545;
-  font-size: 44px;
-  margin-right: 8px; }
-.game .alph-lis { max-width: 492px; margin: 100px 5% 0 0;}
-.alph-lis > li {
+
+/* Secret word in slots and its hint text */
+.game .secret { width: fit-content; margin-left: 10%; }
+.game .secret .hint-txt { font-size: 30px; font-weight: lighter; }
+.game .secret .slot-lis { width: fit-content; margin: 15px auto 0; }
+.slot-lis li.margin-right { margin-right: 16px; }
+.slot-lis li.slot {
+  height: 63px;
+  font-size: 0px;
+  width: 40px;
+  margin-right: -3px;
+  position: relative; }
+li.slot:after {
+  content: '';
+  width: 20px;
+  height: 5px;
+  border-radius: 10px;
+  background: #e2e2e2;
+  position: absolute;
+  right: 0; bottom: -2px; left: 0;
+  margin: auto; }
+li.slot span {
+  position: absolute;
+  right: 0; left: 0;
+  transition: .3s all; }
+li.slot span.revealed{ font: 53px "HelveticaNeue-CondensedBold"; }
+
+/* Alphabets for user input */
+.game .alph-lis { max-width: 492px; margin: 100px 5% 0 0; }
+.alph-lis li {
   width: 82px;
-  font-size: 35px;
+  font-size: 40px;
   line-height: 82px;
   cursor: pointer; }
-.game .animation {
-  position: relative; }
+.alph-lis li.usable:hover {
+  outline: solid .5px #5e5e5e;
+  outline-offset: -8px;
+}
+.alph-lis li.used {
+  cursor: not-allowed;
+  opacity: 42%;
+  outline: none;
+}
+
+/* Game design on the right side */
+.game .animation { position: relative; }
 .animation > * { position: absolute; }
 .animation > #game-ufo { top: -110px; left: 180px; }
 .animation > #game-man { bottom: -70px; left: 200px; }
@@ -87,7 +160,27 @@ table { border-collapse: collapse; }
 .animation:hover .ufo-ray { width: 0px; }
 .animation > #ray1{ left: 310px; transform: rotate(115deg); }
 .animation > #ray2{ left: 353px; transform: rotate(65deg); }
-.animation .game-param { top: -120px; left: 570px; }
+.animation .game-param { top: -120px; left: 580px; }
 .game-param span { font-size: 31px; }
 .game-param .alt-bar { margin: auto; }
-.alt-bar td { height: 55px; width: 30px; }
+.alt-bar td { width: 30px; }
+.alt-bar td.up { background: #ececec;}
+
+
+/* Popup message when game is finished */
+.popup {
+  height: 305px;
+  width: 620px;
+  background: #fff;
+  border: solid .5px #616161;
+  margin: auto;
+  position: fixed;
+  top: 0; bottom: 90px; left: 0; right: 0;
+  z-index: 100;
+  visibility: hidden;
+  transition: .5s all; }
+.popup .popup-content {
+  font-size: 105px;
+  margin: 50px 0 60px; }
+.popup .play-link{
+  font-size: 45px; }

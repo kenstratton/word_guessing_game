@@ -2,35 +2,45 @@
 
 {% block title %}UFO Coming{% endblock %}
 {% block content %}
-  <div class="menu">
-    <a id="home" href="/"><i class="fas fa-home"></i></a>
-    <a id="help" href="/">?</a>
-  </div>
-  <div class="game">
-    <div class="secret">
-      <span class="hint-txt">hint</span>
-      <ul class="slot-lis">
-        {% for _ in range(9) %}<li>{{_}}</li>{% endfor %}
-      </ul>
-    </div>
-    <div class="flex-wrapper">
-      <ul class="alph-lis">
-        {% for al in alphabets %}<li id="{{al}}">{{al}}</li>{% endfor %}
-      </ul>
-      <div class="animation">
-        <div class="ufo-ray" id="ray1"></div><div class="ufo-ray" id="ray2"></div>
-        <img id="game-ufo" src="/static/images/ufo.png" height="300" width="300">
-        <img id="game-man" src="/static/images/flyingman.png" height="260" width="260">
-        <div class="game-param">
-          <span>UFO</span>
-          <table class="alt-bar" border="1">
-            {% for _ in range(5) %}
-              <tr><td></td></tr>
-            {% endfor %}
-          </table>
-          <span>Soil</span>
+    <div class="game">
+        <div class="secret">
+            <span class="hint-txt">{{hint}}</span>
+            <ul class="slot-lis">
+                {% for s in sec_word %}
+                    {% if s in alph %}
+                        <li class="slot">
+                            <span class="sec-{{s}}">{{s}}</span>
+                        </li>
+                    {% else %}
+                        <li class="margin-right"></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
         </div>
-      </div>
+        <div class="flex-wrapper">
+            <ul class="alph-lis">
+                {% for al in alph %}
+                    <li id="{{al}}" class="usable">{{al}}</li>
+                {% endfor %}
+            </ul>
+            <div class="animation">
+                <div class="ufo-ray" id="ray1"></div>
+                <div class="ufo-ray" id="ray2"></div>
+                <img id="game-ufo" src="/static/images/ufo.png"
+                    height="300" width="300">
+                <img id="game-man" src="/static/images/flyingman.png"
+                    height="260" width="260">
+                <div class="game-param">
+                    <span>UFO</span>
+                    <table class="alt-bar" border="1">
+                    </table>
+                    <span>Soil</span>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+    <div class="popup">
+        <h1 class="popup-content"></h1>
+        <button class="play-link" onclick="location.href='/ufo-coming'"></button>
+    </div>
 {% endblock %}

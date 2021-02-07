@@ -2,13 +2,10 @@
 
 {% block title %}TOP{% endblock %}
 {% block content %}
-  <div class="menu">
-    <a id="help" href="/">?</a>
-  </div>
-  <div class="top">
-    <h1>Word Guessing Game{{sql}}</h1>
-    <button class="play-link" onclick="location.href='/ufo-coming'">PLAY</button>
-    <img id="top-ufo" src="/static/images/ufo.png" height="315" width="315">
-    <img id="top-man" src="/static/images/walkingman.png" height="333" width="333">
-  </div>
+    <div class="top">
+        <h1>Word Guessing Game{{sql}}</h1>
+        <button class="play-link" onclick="location.href='/ufo-coming'">PLAY</button>
+        <img id="top-ufo" src="/static/images/ufo.png" height="315" width="315">
+        <img id="top-man" src="/static/images/walkingman.png" height="333" width="333">
+    </div>
 {% endblock %}
