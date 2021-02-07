@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{% block title %}{% endblock %} - Word Guessing Game</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet/style.css') }}">
-    <script src="https://kit.fontawesome.com/8989297e1e.js" crossorigin="anonymous"></script>
-  </head>
-  <body>
-    {% block content %}{% endblock %}
-  </body>
+    <head>
+        <title>{% block title %}{% endblock %} - Word Guessing Game</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet/style.css') }}">
+        <script src="https://kit.fontawesome.com/8989297e1e.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="menu">
+            {% if type == "game" %}
+                <a id="home" href="/"><i class="fas fa-home"></i></a>
+            {% endif %}
+            <div id="help"> ?
+              <div class="popup-txt" id="help-popup">
+                Try to guess a 'Secret Word' before UFO flies away with a business man. 
+                Every time you make a wrong input, the business man is farther off the soli. 
+              </div>
+            </div>
+        </div>
+        {% block content %}{% endblock %}
+        <script src="/static/js/main.js"></script>
+    </body>
 </html>
