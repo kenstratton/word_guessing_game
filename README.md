@@ -4,16 +4,23 @@ This is the python project for CS161 in the winter-term, 2021.
 Access: https://guess-ufo.herokuapp.com/
 
 ## Tools and Techniques
-Language:  Python
-Framework: Flask
-Database:  SQLite
-ORM:       SQLAlchemy
-WebServer: Waitress
+Language:  Python 2.7.16
+
+Framework: Flask 1.1.2
+
+    Aim of choosing Flask was to make the application structure simple and custamizable.
+
+Database:  
+
+    Development -> SQLite 3.32.3
+    Production -> PostgreSQL 12.5
+
+ORM:       SQLAlchemy 2.4.4
+
+WebServer: Heroku 7.47.11
 
 
-Simple while loop to get input from the user and print it to the screen
-
-Keep track of how many times a user has attempted something
+I used Javascript to implement Game section where users try any times with a random secret word.
 
 ## Design
 Downloadable in PDF format from the following link:
