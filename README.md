@@ -1,5 +1,5 @@
 # Word Guessing Game
-This is the python project for CS161 in the winter-term, 2021.
+Users explore some problems allowing them to try to guess a secret word the application sets.
 
 Access: https://guess-ufo.herokuapp.com/
 
