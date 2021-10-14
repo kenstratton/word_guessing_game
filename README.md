@@ -4,9 +4,9 @@ Users explore some problems allowing them to try to guess a secret word the appl
 Access: https://guess-ufo.herokuapp.com/
 
 ## Tools and Techniques
-Language:  Python 2.7.16
+Python 3.7.3
 
-Framework: Flask 1.1.2
+Flask 1.1.2
 
     Aim of choosing Flask was to make the application structure simple and custamizable.
 
